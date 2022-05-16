@@ -251,6 +251,7 @@ pinnacle_data_t cirque_pinnacle_read_data(void) {
     RAP_ReadBytes(STATUS_1, &data_ready, 1); // bit2 is Software Data Ready, bit3 is Command Complete, bit0 and bit1 are reserved/unused
     if ((data_ready & 0x04) == 0) {
         // no data available yet
+        result.valid = false; // be explicit
         return result;
     }
 
@@ -277,5 +278,6 @@ pinnacle_data_t cirque_pinnacle_read_data(void) {
     result.wheelCount = data[3];
 #endif
 
+    result.valid = true;
     return result;
 }
