@@ -45,6 +45,12 @@
 #define Z_IDLE_COUNT_VALUE   0x05
 // clang-format on
 
+// SADEK BEGIN: pulled from https://github.com/qmk/qmk_firmware/pull/17342/files - remove when there is a conflict
+#ifndef CIRQUE_PINNACLE_ATTENUATION
+#    define CIRQUE_PINNACLE_ATTENUATION ADC_ATTENUATE_4X
+#endif
+// SADEK END: pulled from https://github.com/qmk/qmk_firmware/pull/17342/files - remove when there is a conflict
+
 bool     touchpad_init;
 uint16_t scale_data = 1024;
 
@@ -213,7 +219,9 @@ void cirque_pinnacle_init(void) {
     // Host sets z-idle packet count to 5 (default is 30)
     RAP_Write(Z_IDLE_COUNT, Z_IDLE_COUNT_VALUE);
 
-    cirque_pinnacle_set_adc_attenuation(0xFF);
+    // SADEK BEGIN: pulled from https://github.com/qmk/qmk_firmware/pull/17342/files - remove when there is a conflict
+    cirque_pinnacle_set_adc_attenuation(CIRQUE_PINNACLE_ATTENUATION);
+    // SADEK END: pulled from https://github.com/qmk/qmk_firmware/pull/17342/files - remove when there is a conflict
     cirque_pinnacle_tune_edge_sensitivity();
     cirque_pinnacle_enable_feed(true);
 }

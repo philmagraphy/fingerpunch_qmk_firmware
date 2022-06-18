@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // cirque trackpad config
 #define CIRQUE_PINNACLE_ADDR 0x2A
+#define CIRQUE_PINNACLE_ATTENUATION ADC_ATTENUATE_2X
 // If using fingerpunch case
 // #define POINTING_DEVICE_ROTATION_270
 // If using chewiedies case
