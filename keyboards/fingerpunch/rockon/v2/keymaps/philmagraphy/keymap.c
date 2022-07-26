@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,      KC_LBRC,                            KC_RBRC,   KC_Y,      KC_U,      KC_I,      KC_O,      KC_P,      KC_BSLS,
     KC_ESC,    KC_A,      KC_S,      KC_D,      KC_F,      KC_G,      KC_LCBR,                            KC_RCBR,   KC_H,      KC_J,      KC_K,      KC_L,      KC_SCLN,   KC_QUOT,
     KC_LSFT,   KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      KC_LGUI,                            KC_RGUI,   KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_SLSH,   KC_SFTENT,
-                          KC_LCTL,   KC_LCTL,   KC_LALT,   LOWER,     KC_SPC,   KC_MUTE, RGB_TOG,         KC_SPC,    LOWER,     KC_RALT,   KC_RCTL,   KC_RCTL
+                          KC_LCTL,   KC_LCTL,   KC_LALT,   KC_SPC,    LOWER,   KC_MUTE, RGB_TOG,          LOWER,    KC_SPC,     KC_RALT,   KC_RCTL,   KC_RCTL
 ),
 
 
@@ -49,10 +49,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_LOWER] = LAYOUT_rockon(
     KC_F12,        KC_F1,         KC_F2,         KC_F3,         KC_F4,         KC_F5,         KC_PAUS,                              _______,       KC_F6,         KC_F7,         KC_F8,         KC_F9,         KC_F10,        KC_F11,
-    _______,       _______,       KC_SCRL,       KC_NUM,        KC_CAPS,       _______,       KC_HOME,                              KC_END,        _______,       KC_PGDN,       KC_PGUP,       _______,       KC_PSCR,       _______,
-    _______,       _______,       _______,       _______,       _______,       _______,       KC_DEL,                               KC_INS,        KC_LEFT,       KC_DOWN,       KC_UP,         KC_RGHT,       _______,       _______,
-    _______,       _______,       _______,       _______,       _______,       _______,       _______,                              _______,       _______,       _______,       _______,       _______,       _______,       _______,
-                                  _______,       _______,       _______,       _______,       _______,    _______,       RGB_TOG,   _______,       _______,       _______,       _______,       _______
+    _______,       _______,       KC_SCRL,       KC_NUM,        KC_CAPS,       RGB_TOG,       KC_HOME,                              KC_END,        _______,       KC_PGDN,       KC_PGUP,       _______,       KC_PSCR,       _______,
+    _______,       _______,       RGB_HUI,       RGB_SAI,       RGB_VAI,       RGB_MOD,       KC_DEL,                               KC_INS,        KC_LEFT,       KC_DOWN,       KC_UP,         KC_RGHT,       _______,       _______,
+    _______,       _______,       RGB_HUD,       RGB_SAD,       RGB_VAD,       RGB_RMOD,      _______,                              _______,       _______,       _______,       _______,       _______,       _______,       _______,
+                                  _______,       _______,       _______,       _______,       _______,    _______,       _______,   _______,       _______,       _______,       _______,       _______
 ),
 
 [_RAISE] = LAYOUT_rockon(
